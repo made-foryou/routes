@@ -28,7 +28,10 @@
         "laravel": {
             "providers": [
                 "MadeForYou\\Routes\\RoutesServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "Routing": "MadeForYou\\Routes\\Facades\\Routing"
+            }
         }
     }
 }
