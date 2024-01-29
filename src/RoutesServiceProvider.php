@@ -2,40 +2,31 @@
 
 namespace MadeForYou\Routes;
 
-use MadeForYou\Routes\Models\Route;
 use MadeForYou\Routes\Facades\Routing;
-use Spatie\LaravelPackageTools\Package;
+use MadeForYou\Routes\Models\Route;
 use MadeForYou\Routes\Observers\RouteObserver;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
+use Spatie\LaravelPackageTools\Package;
+use Spatie\LaravelPackageTools\PackageServiceProvider;
 
 class RoutesServiceProvider extends PackageServiceProvider
 {
-    /**
-     * @var string
-     */
     public static string $name = 'routes';
 
-    /**
-     * @var string
-     */
     public static string $repository = 'made-foryou/routes';
 
     /**
      * @var array|string[]
      */
     public static array $migrations = [
-        'create_routes_table'
+        'create_routes_table',
     ];
 
     /**
      * Configures everything about the package.
-     *
-     * @param  Package  $package
-     *
-     * @return void
      */
-    #[\Override] public function configurePackage(Package $package): void
+    #[\Override]
+    public function configurePackage(Package $package): void
     {
         $package->name(self::$name)
             ->hasConfigFile()
@@ -51,8 +42,6 @@ class RoutesServiceProvider extends PackageServiceProvider
 
     /**
      * Registers objects and classes onto the container.
-     *
-     * @return void
      */
     public function registeringPackage(): void
     {
@@ -63,8 +52,6 @@ class RoutesServiceProvider extends PackageServiceProvider
 
     /**
      * Boots the package.
-     *
-     * @return void
      */
     public function bootingPackage(): void
     {
