@@ -2,9 +2,9 @@
 
 namespace MadeForYou\Routes\Observers;
 
-use MadeForYou\Routes\Models\Route;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
+use MadeForYou\Routes\Models\Route;
 
 class RouteObserver
 {

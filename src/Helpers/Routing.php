@@ -14,7 +14,7 @@ class Routing
     public function routes()
     {
         if (! Cache::has($this->routesCacheKey())) {
-            throw new Exception('There is no cache with key name '. $this->routesCacheKey() . ' available.');
+            throw new Exception('There is no cache with key name '.$this->routesCacheKey().' available.');
         }
 
         $routes = Cache::get($this->routesCacheKey());

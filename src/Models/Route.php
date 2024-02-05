@@ -2,13 +2,14 @@
 
 namespace MadeForYou\Routes\Models;
 
-use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\MorphTo;
+use Illuminate\Support\Carbon;
 
 /**
  * ## Route model
  * ___
+ *
  * @property-read int $id
  * @property-read string routed_type
  * @property-read int routed_id
@@ -48,8 +49,6 @@ class Route extends Model
 
     /**
      * The object which this route is connected to.
-     *
-     * @return MorphTo
      */
     public function routed(): MorphTo
     {

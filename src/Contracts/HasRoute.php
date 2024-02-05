@@ -14,8 +14,6 @@ interface HasRoute
 {
     /**
      * Gives access to the connected route model through the morph relation.
-     *
-     * @return MorphOne
      */
     public function route(): MorphOne;
 
@@ -23,8 +21,6 @@ interface HasRoute
      * Builds the url for the model. This value will be saved within the
      * url column and will be used as "route" when registering the
      * routes.
-     *
-     * @return string
      */
     public function getUrl(): string;
 }
