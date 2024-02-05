@@ -12,9 +12,6 @@ class RouteObserver
     {
         Cache::forget(self::cacheKey());
 
-        dump('saving the cache into', self::cacheKey());
-        dump(Route::all());
-
         Cache::rememberForever(self::cacheKey(), function () {
             return Route::all();
         });
