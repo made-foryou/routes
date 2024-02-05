@@ -45,7 +45,7 @@ class RoutesServiceProvider extends PackageServiceProvider
      */
     public function registeringPackage(): void
     {
-        $this->app->register(Routing::$accessor, function () {
+        $this->app->bind(Routing::$accessor, function () {
             return new \MadeForYou\Routes\Helpers\Routing();
         });
     }
