@@ -11,14 +11,10 @@ use MadeForYou\Routes\Observers\WithRouteObserver;
  */
 trait WithRoute
 {
-    /**
-     * User exposed observable events.
-     *
-     * These are extra user-defined events observers may subscribe to.
-     */
-    protected array $observables = [
-        WithRouteObserver::class,
-    ];
+    protected static function bootWithRoute(): void
+    {
+        self::observe(WithRouteObserver::class);
+    }
 
     /**
      * Gives access to the connected route model through the morph relation.

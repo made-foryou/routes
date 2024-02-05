@@ -11,7 +11,11 @@ class RouteObserver
     public function saved(Route $route): void
     {
         Cache::forget(self::cacheKey());
-        Cache::forever(self::cacheKey(), function () {
+
+        dump('saving the cache into', self::cacheKey());
+        dump(Route::all());
+
+        Cache::rememberForever(self::cacheKey(), function () {
             return Route::all();
         });
     }

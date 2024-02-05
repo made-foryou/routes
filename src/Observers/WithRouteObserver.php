@@ -23,7 +23,7 @@ class WithRouteObserver
 
     protected function saveRoute(HasRoute $model): void
     {
-        $model->route()->firstOrCreate([
+        $model->route()->updateOrCreate([
             'routed_type' => $model::class,
             'routed_id' => $model->id,
         ], [

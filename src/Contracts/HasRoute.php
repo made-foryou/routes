@@ -23,4 +23,10 @@ interface HasRoute
      * routes.
      */
     public function getUrl(): string;
+
+    /**
+     * Gives the route name which can be used to fast-link routes according
+     * to their names.
+     */
+    public function getRouteName(): string;
 }
