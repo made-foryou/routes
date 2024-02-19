@@ -4,6 +4,7 @@ namespace MadeForYou\Routes;
 
 use Filament\Contracts\Plugin;
 use Filament\Panel;
+use MadeForYou\Routes\Resources\RouteResource;
 
 class RoutesPlugin implements Plugin
 {
@@ -21,7 +22,9 @@ class RoutesPlugin implements Plugin
     #[\Override]
     public function register(Panel $panel): void
     {
-        $panel->resources([]);
+        $panel->resources([
+            RouteResource::class,
+        ]);
     }
 
     #[\Override]
