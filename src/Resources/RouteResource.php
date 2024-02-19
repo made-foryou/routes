@@ -8,6 +8,7 @@ use Filament\Resources\Resource;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use MadeForYou\Routes\Models\Route;
+use MadeForYou\Helpers\Facades\Generate;
 use MadeForYou\Routes\Resources\RouteResource\ListRoutesPage;
 
 class RouteResource extends Resource
@@ -29,7 +30,14 @@ class RouteResource extends Resource
             ->columns([
                 TextColumn::make('routed')
                     ->label('Onderdeel')
-                    ->formatStateUsing(fn (Route $route) => '<strong>'.$route->routed->getType().':</strong> ' .$route->routed->getTitle()),
+                    ->formatStateUsing(
+                        fn (Route $route) => Generate::filamentLink(
+                            link: $route->routed->getResourceLink(),
+                            title: $route->routed->getType().': '
+                                . $route->routed->getTitle()
+                        )
+                    )
+                    ->html(),
 
                 TextColumn::make('url')
                     ->label('URL'),
