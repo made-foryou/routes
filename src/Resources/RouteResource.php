@@ -5,11 +5,9 @@ namespace MadeForYou\Routes\Resources;
 use Filament\Forms\Form;
 use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
-use MadeForYou\News\Models\Post;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use MadeForYou\Routes\Models\Route;
-use MadeForYou\Categories\Models\Category;
 use MadeForYou\Routes\Resources\RouteResource\ListRoutesPage;
 
 class RouteResource extends Resource
@@ -31,17 +29,7 @@ class RouteResource extends Resource
             ->columns([
                 TextColumn::make('routed')
                     ->label('Onderdeel')
-                    ->formatStateUsing(function (Route $route) {
-                        $type = '';
-
-                        if ($route->routed instanceof Category) {
-                            $type = 'Categorie: ';
-                        }
-
-                        if ($route->routed instanceof Post){
-
-                        }
-                    }),
+                    ->formatStateUsing(fn (Route $route) => '<strong>'.$route->routed->getType().':</strong> ' .$route->routed->getTitle()),
 
                 TextColumn::make('url')
                     ->label('URL'),
