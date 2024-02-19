@@ -29,4 +29,8 @@ interface HasRoute
      * to their names.
      */
     public function getRouteName(): string;
+
+    public function getTitle(): string;
+
+    public function getType(): string;
 }
