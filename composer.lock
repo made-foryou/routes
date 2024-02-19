@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4a62fb0bb698c98bb7e610db94f86258",
+    "content-hash": "ccf25b7d85accbe23845f171da21e348",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -2931,6 +2931,54 @@
                 }
             ],
             "time": "2024-01-28T19:07:11+00:00"
+        },
+        {
+            "name": "made-foryou/filament-helpers",
+            "version": "dev-gitbutler/integration",
+            "dist": {
+                "type": "path",
+                "url": "./../filament-helpers",
+                "reference": "57a9d158dcd0fb762bc22f77d4a1e484a420a10d"
+            },
+            "require": {
+                "filament/filament": "^3.2",
+                "php": "~8.0",
+                "spatie/laravel-package-tools": "^1.16"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.13",
+                "orchestra/testbench": "^8.20"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "MadeForYou\\Helpers\\HelpersServiceProvider"
+                    ],
+                    "aliases": {
+                        "Packages": "MadeForYou\\Helpers\\Facades\\Packages"
+                    }
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "MadeForYou\\Helpers\\": "src/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Menno Tempelaar",
+                    "email": "menno@made-foryou.nl",
+                    "role": "development"
+                }
+            ],
+            "description": "Helpers for the development of projects with the filament packages.",
+            "transport-options": {
+                "relative": true
+            }
         },
         {
             "name": "masterminds/html5",
