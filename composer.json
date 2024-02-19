@@ -14,6 +14,20 @@
             "role": "developer"
         }
     ],
+    "repositories": [
+        {
+            "type": "path",
+            "url": "./../filament-categories-package"
+        },
+        {
+            "type": "path",
+            "url": "./../filament-helpers"
+        },
+        {
+            "type": "path",
+            "url": "./../filament-news-package"
+        }
+    ],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
@@ -23,7 +37,9 @@
     },
     "require-dev": {
         "laravel/pint": "^1.13",
-        "orchestra/testbench": "^8.21"
+        "orchestra/testbench": "^8.21",
+        "made-foryou/filament-categories": "dev-main",
+        "made-foryou/filament-news": "dev-main"
     },
     "extra": {
         "laravel": {
