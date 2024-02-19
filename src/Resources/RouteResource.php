@@ -45,7 +45,8 @@ class RouteResource extends Resource
                 TextColumn::make('updated_at')
                     ->label("Laatste gewijzigd op")
                     ->since(),
-            ]);
+            ])
+            ->defaultSort('updated_at', 'desc');
     }
 
     #[\Override]
