@@ -2,6 +2,7 @@
     "name": "made-foryou/routes",
     "description": "A packages which can provide routing generated from the database.",
     "license": "MIT",
+    "version": "0.0.1",
     "autoload": {
         "psr-4": {
             "MadeForYou\\Routes\\": "src/"
@@ -26,7 +27,7 @@
         "php": "~8.3",
         "spatie/laravel-package-tools": "^1.16",
         "filament/filament": "^3.2",
-        "made-foryou/filament-helpers": "dev-gitbutler/integration"
+        "made-foryou/filament-helpers": "^0.0"
     },
     "require-dev": {
         "laravel/pint": "^1.13",
