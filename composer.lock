@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ccf25b7d85accbe23845f171da21e348",
+    "content-hash": "05d00898d666817e47090e9a5ce71d05",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -2934,11 +2934,17 @@
         },
         {
             "name": "made-foryou/filament-helpers",
-            "version": "dev-gitbutler/integration",
+            "version": "0.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/made-foryou/filament-helpers.git",
+                "reference": "187d8c54f0427cb6adede47db75f8aade42e0150"
+            },
             "dist": {
-                "type": "path",
-                "url": "./../filament-helpers",
-                "reference": "57a9d158dcd0fb762bc22f77d4a1e484a420a10d"
+                "type": "zip",
+                "url": "https://api.github.com/repos/made-foryou/filament-helpers/zipball/187d8c54f0427cb6adede47db75f8aade42e0150",
+                "reference": "187d8c54f0427cb6adede47db75f8aade42e0150",
+                "shasum": ""
             },
             "require": {
                 "filament/filament": "^3.2",
@@ -2956,7 +2962,8 @@
                         "MadeForYou\\Helpers\\HelpersServiceProvider"
                     ],
                     "aliases": {
-                        "Packages": "MadeForYou\\Helpers\\Facades\\Packages"
+                        "Packages": "MadeForYou\\Helpers\\Facades\\Packages",
+                        "Generate": "MadeForYou\\Helpers\\Facades\\Generate"
                     }
                 }
             },
@@ -2965,6 +2972,7 @@
                     "MadeForYou\\Helpers\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -2976,9 +2984,11 @@
                 }
             ],
             "description": "Helpers for the development of projects with the filament packages.",
-            "transport-options": {
-                "relative": true
-            }
+            "support": {
+                "issues": "https://github.com/made-foryou/filament-helpers/issues",
+                "source": "https://github.com/made-foryou/filament-helpers/tree/0.0.1"
+            },
+            "time": "2024-03-02T12:47:20+00:00"
         },
         {
             "name": "masterminds/html5",

@@ -15,19 +15,13 @@
             "role": "developer"
         }
     ],
-    "repositories": [
-        {
-            "type": "path",
-            "url": "./../filament-helpers"
-        }
-    ],
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require": {
         "php": "~8.3",
         "spatie/laravel-package-tools": "^1.16",
         "filament/filament": "^3.2",
-        "made-foryou/filament-helpers": "^0.0"
+        "made-foryou/filament-helpers": "^0.0.1"
     },
     "require-dev": {
         "laravel/pint": "^1.13",
