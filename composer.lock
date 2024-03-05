@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "05d00898d666817e47090e9a5ce71d05",
+    "content-hash": "47d04dda7146d407a385d191c80e9abf",
     "packages": [
         {
             "name": "anourvalar/eloquent-serialize",
@@ -2934,16 +2934,16 @@
         },
         {
             "name": "made-foryou/filament-helpers",
-            "version": "0.0.1",
+            "version": "0.1.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/made-foryou/filament-helpers.git",
-                "reference": "187d8c54f0427cb6adede47db75f8aade42e0150"
+                "reference": "1e0ed4e5d6f67bb730d07977d2b743e344af70f3"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/made-foryou/filament-helpers/zipball/187d8c54f0427cb6adede47db75f8aade42e0150",
-                "reference": "187d8c54f0427cb6adede47db75f8aade42e0150",
+                "url": "https://api.github.com/repos/made-foryou/filament-helpers/zipball/1e0ed4e5d6f67bb730d07977d2b743e344af70f3",
+                "reference": "1e0ed4e5d6f67bb730d07977d2b743e344af70f3",
                 "shasum": ""
             },
             "require": {
@@ -2986,9 +2986,9 @@
             "description": "Helpers for the development of projects with the filament packages.",
             "support": {
                 "issues": "https://github.com/made-foryou/filament-helpers/issues",
-                "source": "https://github.com/made-foryou/filament-helpers/tree/0.0.1"
+                "source": "https://github.com/made-foryou/filament-helpers/tree/0.1.0"
             },
-            "time": "2024-03-02T12:47:20+00:00"
+            "time": "2024-03-05T19:50:29+00:00"
         },
         {
             "name": "masterminds/html5",

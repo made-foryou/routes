@@ -7,8 +7,8 @@ use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
-use MadeForYou\Routes\Models\Route;
 use MadeForYou\Helpers\Facades\Generate;
+use MadeForYou\Routes\Models\Route;
 use MadeForYou\Routes\Resources\RouteResource\ListRoutesPage;
 
 class RouteResource extends Resource
@@ -34,7 +34,7 @@ class RouteResource extends Resource
                         fn (Route $route) => Generate::filamentLink(
                             link: $route->routed->getResourceLink(),
                             title: $route->routed->getType().': '
-                                . $route->routed->getTitle()
+                                .$route->routed->getTitle()
                         )
                     )
                     ->html(),
@@ -43,7 +43,7 @@ class RouteResource extends Resource
                     ->label('URL'),
 
                 TextColumn::make('updated_at')
-                    ->label("Laatste gewijzigd op")
+                    ->label('Laatste gewijzigd op')
                     ->since(),
             ])
             ->defaultSort('updated_at', 'desc');
