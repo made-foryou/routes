@@ -18,13 +18,6 @@ class Routing
      */
     public function routes(): void
     {
-        if (! Cache::has($this->routesCacheKey())) {
-            throw new Exception(
-                'There is no cache with key name '
-                    .$this->routesCacheKey().' available.'
-            );
-        }
-
         $this->getRoutes()->each(function (Route $route) {
             RouteFacade::get(
                 $route->routed->getUrl(),
