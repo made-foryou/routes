@@ -2,7 +2,7 @@
     "name": "made-foryou/routes",
     "description": "A packages which can provide routing generated from the database.",
     "license": "MIT",
-    "version": "0.2.0",
+    "version": "0.2.1",
     "autoload": {
         "psr-4": {
             "MadeForYou\\Routes\\": "src/"
