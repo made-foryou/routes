@@ -6,12 +6,14 @@ use Exception;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Config;
-use MadeForYou\Routes\Models\Route;
 use Illuminate\Support\Facades\Route as RouteFacade;
+use MadeForYou\Routes\Models\Route;
 
 class Routing
 {
     /**
+     * Generates the routes according this route package.
+     *
      * @throws Exception
      */
     public function routes(): void
@@ -23,9 +25,7 @@ class Routing
             );
         }
 
-        $routes = collect(Cache::get($this->routesCacheKey()));
-
-        $routes->each(function (Route $route) {
+        $this->getRoutes()->each(function (Route $route) {
             RouteFacade::get(
                 $route->routed->getUrl(),
                 $this->getRouteAction($route)
@@ -33,7 +33,43 @@ class Routing
         });
     }
 
-    public function getRouteAction(Route $route): mixed
+    /**
+     * Checks whether the route name is generated from this Routing class.
+     *
+     * @param  string  $name
+     *
+     * @return bool
+     */
+    public function hasRoute(string $name): bool
+    {
+        return $this->getRoute($name) !== null;
+    }
+
+    /**
+     * Returns the route from the given route name.
+     *
+     * @param  string  $name
+     *
+     * @return Route|null
+     */
+    public function getRoute(string $name): ?Route
+    {
+        return $this->getRoutes()
+            ->filter(fn (Route $route) => $route->routed->getRouteName() === $name)
+            ->first();
+    }
+
+	/**
+	 * Gathers the routes from the cache file.
+	 *
+	 * @return Collection
+	 */
+    protected function getRoutes(): Collection
+    {
+        return collect(Cache::get($this->routesCacheKey(), []));
+    }
+
+    protected function getRouteAction(Route $route): mixed
     {
         $action = $this->getSpecificSetting($route);
 
@@ -52,19 +88,19 @@ class Routing
         return $action;
     }
 
-    public function getSpecificSetting(Route $route): mixed
+    protected function getSpecificSetting(Route $route): mixed
     {
         return $this->routeActionSettings()->get(
             $route->routed_type.'-'.$route->routed_id
         );
     }
 
-    public function getTypeDefinedSetting(Route $route): mixed
+    protected function getTypeDefinedSetting(Route $route): mixed
     {
         return $this->routeActionSettings()->get($route->routed_type);
     }
 
-    public function getGlobalSetting(): mixed
+    protected function getGlobalSetting(): mixed
     {
         return config('routes.controller');
     }
