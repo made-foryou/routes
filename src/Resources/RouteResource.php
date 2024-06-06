@@ -5,9 +5,11 @@ namespace MadeForYou\Routes\Resources;
 use Filament\Forms\Form;
 use Filament\Infolists\Infolist;
 use Filament\Resources\Resource;
+use Filament\Tables\Actions\Action;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use MadeForYou\Helpers\Facades\Generate;
+use MadeForYou\Routes\Actions\RefreshRouteCacheAction;
 use MadeForYou\Routes\Models\Route;
 use MadeForYou\Routes\Resources\RouteResource\ListRoutesPage;
 
@@ -45,6 +47,12 @@ class RouteResource extends Resource
                 TextColumn::make('updated_at')
                     ->label('Laatste gewijzigd op')
                     ->since(),
+            ])
+            ->headerActions([
+                Action::make('refresh_cache')
+                    ->label('Routes bijwerken')
+                    ->button()
+                    ->action(fn () => RefreshRouteCacheAction::run())
             ])
             ->defaultSort('updated_at', 'desc');
     }
